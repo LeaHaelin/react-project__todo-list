@@ -1,12 +1,16 @@
 import React from 'react';
 import { Todo } from './Todo';
 
-export const List = ({ isLight, todos }) => {
+export const List = ({ isLight, todos, setTodos }) => {
+
+
+
     return (
         <div className='list'>
             <ul className='list__todos' >
                 {todos.map((todo) => {
-                    return <Todo todo={todo} key={todo.id} />
+                    // make a child component which we'll use repeatedly
+                    return <Todo todo={todo} key={todo.id} todos={todos} setTodos={setTodos} />
                 })}
             </ul>
             <div className="list__control">

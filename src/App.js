@@ -17,7 +17,7 @@ function App() {
       <main className="main-div">
         <Header isLight={isLight} />
         <Input isLight={isLight} inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
-        <List isLight={isLight} todos={todos} />
+        <List isLight={isLight} todos={todos} setTodos={setTodos} />
         <Status isLight={isLight} />
       </main>
     </div>

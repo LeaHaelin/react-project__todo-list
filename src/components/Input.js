@@ -2,19 +2,20 @@ import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
 export const Input = ({ isLight, inputText, setInputText, todos, setTodos }) => {
-
+    //-> <input>
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
-    } //-> <input>
+    }
 
+    // -> <form>
     const submitHandler = (e) => {
+        // prevent form submission
         e.preventDefault()
-        // prevent inputText disappear
-        setTodos([...todos, { text: inputText, id: uuidv4() }])
         // update todos, put id so every updated list can have key
-        setInputText("")
+        setTodos([...todos, { text: inputText, id: uuidv4() }])
         // when submitHandler runs, <input> text area will be empty
-    } // -> <form>
+        setInputText("")
+    }
 
     return (
         <form className='input-box' onSubmit={submitHandler}>
