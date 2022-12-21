@@ -1,7 +1,7 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
-export const Input = ({ isLight, inputText, setInputText, todos, setTodos }) => {
+export const Input = ({ isLight, inputText, setInputText, todos, setTodos, active }) => {
     //-> <input>
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
@@ -12,7 +12,7 @@ export const Input = ({ isLight, inputText, setInputText, todos, setTodos }) => 
         // prevent form submission
         e.preventDefault()
         // update todos, put id so every updated list can have key
-        setTodos([...todos, { text: inputText, id: uuidv4() }])
+        setTodos([...todos, { text: inputText, id: uuidv4(), completed: false }])
         // when submitHandler runs, <input> text area will be empty
         setInputText("")
     }

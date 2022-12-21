@@ -2,6 +2,7 @@
 @import url(./_input.scss);
 @import url(./_list.scss);
 @import url(./_status.scss);
+@import url(./_todo.scss);
 * {
   padding: 0;
   margin: 0;
@@ -21,5 +22,6 @@
   border: 1px solid rgb(38, 0, 255);
   background-image: url(../images/bg-mobile-light.jpg);
   background-repeat: no-repeat;
+  background-color: #F2F2F2;
   padding: 0 24px;
 }/*# sourceMappingURL=app.css.map */

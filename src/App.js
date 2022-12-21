@@ -12,6 +12,7 @@ function App() {
   const [todos, setTodos] = useState([]); // to store a new updated list. -> input comp.
 
 
+
   return (
     <div className="App">
       <main className="main-div">

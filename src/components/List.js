@@ -1,7 +1,8 @@
 import React from 'react';
 import { Todo } from './Todo';
 
-export const List = ({ isLight, todos, setTodos }) => {
+export const List = ({ isLight, todos, todo, setTodos }) => {
+
 
 
 
@@ -13,12 +14,9 @@ export const List = ({ isLight, todos, setTodos }) => {
                     return <Todo todo={todo} key={todo.id} todos={todos} setTodos={setTodos} />
                 })}
             </ul>
-            <div className="list__control">
-                <p className="list__control--count">5 items left</p>
-                <div className="list__control--buttons">
-                    <button className='list__control--button'>clear</button>
-                    <button className='list__control--button'>completed</button>
-                </div>
+            <div className='list__control'>
+                <p className='list__control--count'>5 items left</p>
+                <button className='list__control--button'>clear completed</button>
             </div>
         </div>
     )

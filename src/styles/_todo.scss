@@ -1,0 +1,44 @@
+.todo-item {
+    height: 52px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #E3E4F1;
+}
+
+.todo__radio {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #E3E4F1;
+    border-radius: 50px;
+    margin-right: 12px;
+    display: flex;
+    padding: 4px;
+}
+
+.todo__radio--check {
+    margin: 0 auto;
+}
+
+.todo__radio.completed {
+    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+}
+
+.todo__text {
+    list-style: none;
+    width: 220px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.todo__text.completed {
+    text-decoration: line-through;
+    color: #D1D2DA;
+}
+
+.todo__icon--delete {
+    margin-left: 20px;
+    width: 11.79px;
+    height: 11.79px;
+}
