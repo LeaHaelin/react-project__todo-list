@@ -3,7 +3,7 @@ import logo from "../images/logo-todo.svg";
 import iconMoon from "../images/icon-moon.svg";
 import iconSun from "../images/icon-sun.svg";
 
-export const Header = (isLight) => {
+export const Header = () => {
 
     return (
         <div className='header'>

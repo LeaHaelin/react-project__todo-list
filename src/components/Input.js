@@ -1,7 +1,7 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
-export const Input = ({ isLight, inputText, setInputText, todos, setTodos, active }) => {
+export const Input = ({ inputText, setInputText, todos, setTodos, active }) => {
     //-> <input>
     const inputTextHandler = (e) => {
         setInputText(e.target.value);

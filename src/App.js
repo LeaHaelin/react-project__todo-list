@@ -7,19 +7,20 @@ import "./styles/app.css";
 
 function App() {
   //useStates
-  const [isLight, setIsLight] = useState(); // light mode -> all components
-  const [inputText, setInputText] = useState(""); // to get user types. -> input component
-  const [todos, setTodos] = useState([]); // to store a new updated list. -> input comp.
+  const [inputText, setInputText] = useState(""); // to get user types. -> Input
+  const [todos, setTodos] = useState([]); // to store a new updated list. -> Input, Status
+  const [filteredTodos, setFilteredTodos] = useState([]); //filter status of todos -> Status 
+  const [todoStatus, setTodoStatus] = useState("All"); // update status of a todo when the status btn clicked -> Status 
 
 
 
   return (
     <div className="App">
       <main className="main-div">
-        <Header isLight={isLight} />
-        <Input isLight={isLight} inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
-        <List isLight={isLight} todos={todos} setTodos={setTodos} />
-        <Status isLight={isLight} />
+        <Header />
+        <Input inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
+        <List todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
+        <Status todos={todos} setFilteredTodos={setFilteredTodos} todoStatus={todoStatus} setTodoStatus={setTodoStatus} />
       </main>
     </div>
   );

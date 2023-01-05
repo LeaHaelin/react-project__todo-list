@@ -33,9 +33,9 @@ export const Todo = ({ todo, todos, setTodos }) => {
 
 
     return (
-        <div className={todos.completed ? 'todo-item completed' : 'todo-item'} onClick={activeHandler}>
-            <div className={todo.completed ? 'todo__radio completed' : 'todo__radio'}><img className='todo__radio--check' src={iconCheck} alt="" /></div>
-            <p className={todo.completed ? 'todo__text completed' : 'todo__text'}>{todo.text}</p>
+        <div className={todos.completed ? 'todo-item completed' : 'todo-item'} >
+            <div className={todo.completed ? 'todo__radio completed' : 'todo__radio'} onClick={activeHandler}><img className='todo__radio--check' src={iconCheck} alt="" /></div>
+            <p className={todo.completed ? 'todo__text completed' : 'todo__text'} onClick={activeHandler}>{todo.text}</p>
             <img onClick={deleteHandler} className='todo__icon--delete' src={iconCross} alt="" />
         </div>
     )
