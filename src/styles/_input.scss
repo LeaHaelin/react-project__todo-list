@@ -28,5 +28,20 @@
 .input_text-area::placeholder {
     color: #9495A5;
     font-weight: 400;
-    font-size: 12px;
+}
+
+@media(min-width:700px) {
+    .input-box {
+        height: 64px;
+        padding: 24px 20px;
+    }
+
+    .radio {
+        width: 24px;
+        height: 24px;
+    }
+
+    .input_text-area {
+        font-size: 18px;
+    }
 }

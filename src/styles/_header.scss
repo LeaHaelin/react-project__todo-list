@@ -1,6 +1,20 @@
 .header {
     margin-top: 48px;
-    border: 1px solid palegreen;
     display: flex;
     justify-content: space-between;
+}
+
+@media(min-width:700px) {
+    .header {
+        margin-top: 70px;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .mode {
+        width: 26px;
+        height: 26px;
+    }
 }

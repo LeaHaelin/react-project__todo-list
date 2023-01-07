@@ -17,10 +17,12 @@ function App() {
   return (
     <div className="App">
       <main className="main-div">
-        <Header />
-        <Input inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
-        <List todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
-        <Status todos={todos} setFilteredTodos={setFilteredTodos} todoStatus={todoStatus} setTodoStatus={setTodoStatus} />
+        <div className="content">
+          <Header />
+          <Input inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
+          <List todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
+          <Status todos={todos} setFilteredTodos={setFilteredTodos} todoStatus={todoStatus} setTodoStatus={setTodoStatus} />
+        </div>
       </main>
     </div>
   );

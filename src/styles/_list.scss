@@ -26,3 +26,14 @@
     color: #9495A5;
     text-transform: capitalize;
 }
+
+@media(min-width:700px) {
+    .list {
+        margin-top: 24px;
+    }
+
+    .list__control {
+        font-size: 14px;
+        padding: 16px 24px;
+    }
+}
