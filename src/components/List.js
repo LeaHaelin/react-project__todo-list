@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Todo } from './Todo';
 
-export const List = ({ todos, todo, setTodos, filteredTodos }) => {
+export const List = ({ todos, setTodos, filteredTodos, statusHandler }) => {
 
     const clearCompletedHandler = () => {
         setTodos(todos.filter(t => t.completed === false))
@@ -18,8 +18,13 @@ export const List = ({ todos, todo, setTodos, filteredTodos }) => {
                 })}
             </ul>
             <div className='list__control'>
-                <p className='list__control--count'>{todos.filter(t => !t.completed).length} items left</p>
-                <button className='list__control--button' onClick={clearCompletedHandler}>clear completed</button>
+                <p className='list__control--counter'>{todos.filter(t => !t.completed).length} items left</p>
+                <div className="list__status--desktop">
+                    <button className="status__btn" onClick={() => { statusHandler("all") }}>all</button>
+                    <button className="status__btn" onClick={() => { statusHandler("active") }}>active</button>
+                    <button className="status__btn" onClick={() => { statusHandler("completed") }}>completed</button>
+                </div>
+                <button className='list__control--clear' onClick={clearCompletedHandler}>clear completed</button>
             </div>
         </div>
     )

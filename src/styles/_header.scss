@@ -4,6 +4,15 @@
     justify-content: space-between;
 }
 
+.mode {
+    width: 20px;
+    height: 20px;
+}
+
+.mode:hover {
+    cursor: pointer;
+}
+
 @media(min-width:700px) {
     .header {
         margin-top: 70px;

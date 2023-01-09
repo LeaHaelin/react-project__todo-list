@@ -1,3 +1,7 @@
+.list__status--desktop {
+    display: none;
+}
+
 .status {
     margin-top: 16px;
     min-width: 327px;
@@ -16,10 +20,25 @@
     background-color: transparent;
     text-transform: capitalize;
     font-weight: 700;
+    font-size: 14px;
+    font-family: 'Josefin Sans', sans-serif;
     color: #9495A5;
 }
 
 .status__btn:hover,
 .status__btn:focus {
     color: #3A7CFD;
+    cursor: pointer;
+}
+
+@media(min-width:700px) {
+    .status {
+        display: none;
+    }
+
+    .list__status--desktop {
+        display: flex;
+        justify-content: space-between;
+        width: 166px;
+    }
 }

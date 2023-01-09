@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 
-export const Status = ({ todos, todoStatus, setTodoStatus, setFilteredTodos }) => {
+export const Status = ({ todos, todoStatus, setTodoStatus, setFilteredTodos, statusHandler }) => {
     //when todos or todoStatus runs, filterHandler will update status of the list.
     useEffect(() => {
         filterHandler()
@@ -20,14 +20,12 @@ export const Status = ({ todos, todoStatus, setTodoStatus, setFilteredTodos }) =
                 break;
         }
     }
-    const statusHandler = (clickStatus) => {
-        setTodoStatus(clickStatus);
-    }
+
     return (
         <div className='status'>
-            <button className="status__btn btn-all" onClick={() => { statusHandler("all") }}>all</button>
-            <button className="status__btn btn-active" onClick={() => { statusHandler("active") }}>active</button>
-            <button className="status__btn btn-completed" onClick={() => { statusHandler("completed") }}>completed</button>
+            <button className="status__btn" onClick={() => { statusHandler("all") }}>all</button>
+            <button className="status__btn" onClick={() => { statusHandler("active") }}>active</button>
+            <button className="status__btn" onClick={() => { statusHandler("completed") }}>completed</button>
         </div>
     )
 }

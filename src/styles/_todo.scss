@@ -17,6 +17,13 @@
     padding: 4px;
 }
 
+.todo__radio:hover {
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+        linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) border-box;
+}
+
 .todo__radio--check {
     margin: 0 auto;
 }
@@ -27,7 +34,7 @@
 
 .todo__text {
     list-style: none;
-    width: 220px;
+    min-width: 220px;
     font-weight: 400;
     font-size: 12px;
 }
@@ -41,4 +48,15 @@
     margin-left: 20px;
     width: 11.79px;
     height: 11.79px;
+}
+
+.todo__text:hover,
+.todo__icon--delete:hover {
+    cursor: pointer;
+}
+
+@media(min-width:700px) {
+    .todo__text {
+        width: 460px;
+    }
 }

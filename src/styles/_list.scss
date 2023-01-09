@@ -14,17 +14,22 @@
     padding: 16px 20px;
 }
 
-.list__control--count {
+.list__control--counter {
     color: #9495A5;
 }
 
-.list__control--button {
+.list__control--clear {
     border: none;
     background-color: transparent;
     font-weight: 400;
     font-size: 12px;
+    font-family: 'Josefin Sans', sans-serif;
     color: #9495A5;
     text-transform: capitalize;
+}
+
+.list__control--clear:hover {
+    cursor: pointer;
 }
 
 @media(min-width:700px) {
