@@ -20,7 +20,7 @@ export const Input = ({ inputText, setInputText, todos, setTodos, active }) => {
     return (
         <form className='input-box' onSubmit={submitHandler}>
             <div className="radio"></div>
-            <input className='input_text-area' type="text" placeholder='Create a new todo…' maxLength="36" value={inputText} onChange={inputTextHandler} />
+            <input className='input_text-area' type="text" placeholder='Create a new todo…' value={inputText} onChange={inputTextHandler} />
         </form>
     )
 }

@@ -7,11 +7,12 @@ import "./styles/app.css";
 
 function App() {
   //useStates
-  const [inputText, setInputText] = useState(""); // to get user types. -> Input
-  const [todos, setTodos] = useState([]); // to store a new updated list. -> Input, Status
-  const [filteredTodos, setFilteredTodos] = useState([]); //filter status of todos -> Status 
-  const [todoStatus, setTodoStatus] = useState("all"); // update status of a todo when the status btn clicked -> Status 
-  //statusHandler will update status in mobile = <Status>and desktop = <List>
+  const [inputText, setInputText] = useState(""); // to get the user's input text.
+  const [todos, setTodos] = useState([]); // to store a newly updated todo in the list.
+  const [filteredTodos, setFilteredTodos] = useState([]); //to show the list on UI depends on the status of a todo.
+  const [todoStatus, setTodoStatus] = useState("all"); // to update the status of a todo when a status btn clicks.
+
+  //statusHandler will update status in mobile => <Status>, desktop => <List>.
   const statusHandler = (clickStatus) => {
     setTodoStatus(clickStatus);
   }

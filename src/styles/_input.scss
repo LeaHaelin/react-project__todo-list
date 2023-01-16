@@ -6,7 +6,7 @@
     height: 48px;
     display: flex;
     align-items: center;
-    padding: 14px 20px;
+    padding: 10px 20px;
 }
 
 .radio {
@@ -18,23 +18,22 @@
 }
 
 .input_text-area {
-    width: 230px;
+    width: 90%;
+    height: 24px;
     font-weight: 400;
-    font-size: 12px;
-    border: none;
+    border: 1px solid red;
     outline: none;
     font-family: 'Josefin Sans', sans-serif;
 }
 
 .input_text-area::placeholder {
     color: #9495A5;
-    font-weight: 400;
 }
 
 @media(min-width:700px) {
     .input-box {
         height: 64px;
-        padding: 24px 20px;
+        padding: 10px 20px;
     }
 
     .radio {
@@ -43,6 +42,12 @@
     }
 
     .input_text-area {
+        height: 34px;
         font-size: 18px;
+        border: 1px solid red;
+    }
+
+    .input_text-area::placeholder {
+        height: 24px;
     }
 }
