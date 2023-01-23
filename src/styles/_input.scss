@@ -21,7 +21,7 @@
     width: 90%;
     height: 24px;
     font-weight: 400;
-    border: 1px solid red;
+    border: none;
     outline: none;
     font-family: 'Josefin Sans', sans-serif;
 }
@@ -44,7 +44,6 @@
     .input_text-area {
         height: 34px;
         font-size: 18px;
-        border: 1px solid red;
     }
 
     .input_text-area::placeholder {

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect } from 'react'
 
-export const Status = ({ todos, todoStatus, setTodoStatus, setFilteredTodos, statusHandler }) => {
-    //when todos or todoStatus runs, filterHandler will update status of the list.
+export const Status = ({ todos, todoStatus, setFilteredTodos, statusHandler }) => {
+    //when todos or todoStatus is updated, filterHandler will switch the status of the todo.
     useEffect(() => {
         filterHandler()
     }, [todos, todoStatus])

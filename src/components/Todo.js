@@ -5,7 +5,7 @@ import iconCross from '../images/icon-cross.svg';
 
 export const Todo = ({ todo, todos, setTodos }) => {
     const deleteHandler = () => {
-        // 2nd array copy from filter (t)
+        // the 2nd array copy from filter (t)
         setTodos(todos.filter(t => {
             //if the id from 1st map array is not the same with the id from 2nd filter array,
             if (todo.id !== t.id) {
