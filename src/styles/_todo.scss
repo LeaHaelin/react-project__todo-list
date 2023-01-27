@@ -1,4 +1,5 @@
-.todo-item {
+.todo-form,
+.todo-item__inner {
     height: 52px;
     display: flex;
     justify-content: left;
@@ -55,8 +56,19 @@
     cursor: pointer;
 }
 
+.todo-input {
+    min-width: 250px;
+    outline: none;
+    border: none;
+    border-bottom: 1px dotted #C058F3;
+}
+
 @media(min-width:700px) {
     .todo__text {
         width: 460px;
+    }
+
+    .todo-input {
+        min-width: 470px;
     }
 }
