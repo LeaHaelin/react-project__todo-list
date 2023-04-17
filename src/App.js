@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { List } from "./components/List";
 import { Status } from "./components/Status";
+import { ThemeContext } from "./context/Theme";
 import "./styles/app.css";
 
 function App() {
@@ -17,10 +18,13 @@ function App() {
     setTodoStatus(clickStatus);
   }
 
+  const themes = useContext(ThemeContext);
+
+  console.log(themes)
   return (
     <div className="App">
       <main className="main-div">
-        <div className="content">
+        <div className="content conent--light">
           <Header />
           <Input inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} />
           <List todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} statusHandler={statusHandler} />
