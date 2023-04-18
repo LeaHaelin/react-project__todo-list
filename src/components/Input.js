@@ -1,12 +1,11 @@
 import React from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
-export const Input = ({ inputText, setInputText, todos, setTodos }) => {
+export const Input = ({ inputText, setInputText, todos, setTodos, isDarkMode, themes }) => {
     //-> <input>
     const inputTextHandler = (e) => {
         setInputText(e.target.value);
     }
-
     // -> <form>
     const submitHandler = (e) => {
         // prevent form submission
@@ -18,9 +17,9 @@ export const Input = ({ inputText, setInputText, todos, setTodos }) => {
     }
 
     return (
-        <form className='input-box' onSubmit={submitHandler}>
-            <div className="radio"></div>
-            <input className='input_text-area' type="text" placeholder='Create a new todo…' value={inputText} onChange={inputTextHandler} />
+        <form className={isDarkMode ? 'input input--dark' : 'input input--light'} style={{ backgroundColor: themes.inputListBgColor }} onSubmit={submitHandler}>
+            <div className="input__radio" style={{ border: themes.todoRadioBorder }}></div>
+            <input className='input__text-area' type="text" placeholder='Create a new todo…' value={inputText} onChange={inputTextHandler} style={{ color: themes.inputTextColor }} />
         </form>
     )
 }

@@ -5,7 +5,6 @@
     justify-content: left;
     align-items: center;
     padding: 16px 20px;
-    border-bottom: 1px solid #E3E4F1;
 }
 
 .todo__radio {
@@ -63,12 +62,4 @@
     border-bottom: 1px dotted #C058F3;
 }
 
-@media(min-width:700px) {
-    .todo__text {
-        width: 460px;
-    }
-
-    .todo-input {
-        min-width: 470px;
-    }
-}
+@media(min-width:700px) {}

@@ -1,52 +1,30 @@
-.input-box {
+.input {
     margin-top: 40px;
-    border-radius: 5px;
-    background: #FFFFFF;
-    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    padding: 14px 20px;
+    border: 1px solid palegreen;
     height: 48px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
-    padding: 10px 20px;
 }
 
-.radio {
+.input__radio {
+    margin-right: 12px;
+    border: 1px solid #E3E4F1;
     width: 20px;
     height: 20px;
-    border: 1px solid #E3E4F1;
     border-radius: 50px;
-    margin-right: 12px;
 }
 
-.input_text-area {
-    width: 90%;
+.input__text-area {
     height: 24px;
     font-weight: 400;
+    font-size: 14px;
+    padding: 2px;
     border: none;
     outline: none;
     font-family: 'Josefin Sans', sans-serif;
+    background-color: transparent;
 }
 
-.input_text-area::placeholder {
-    color: #9495A5;
-}
-
-@media(min-width:700px) {
-    .input-box {
-        height: 64px;
-        padding: 10px 20px;
-    }
-
-    .radio {
-        width: 24px;
-        height: 24px;
-    }
-
-    .input_text-area {
-        height: 34px;
-        font-size: 18px;
-    }
-
-    .input_text-area::placeholder {
-        height: 24px;
-    }
-}
+@media(min-width:700px) {}
