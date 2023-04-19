@@ -3,7 +3,7 @@ import iconCheck from '../images/icon-check.svg';
 import iconCross from '../images/icon-cross.svg';
 
 
-export const Todo = ({ todo, todos, setTodos, themes }) => {
+export const Todo = ({ todo, todos, setTodos, themes, isDarkMode }) => {
     const [editedText, setEditedText] = useState(""); //to edit and save todo's inputText to editedText
     const [doubleClick, setDoubleClick] = useState(false); //to check if it's double clicked
     //to delete the todo from the list
@@ -39,20 +39,20 @@ export const Todo = ({ todo, todos, setTodos, themes }) => {
         }))
         setDoubleClick(!doubleClick) //to reset double click status
     }
-
-    console.log(themes)
     return (
-        <div className={todos.completed ? 'todo-item completed' : 'todo-item'} >
+        <div className={todos.completed ? 'todo todo--completed' : 'todo'} >
             {doubleClick ?
-                <form className='todo-form' onSubmit={editTextHandler} style={{ borderBottom: themes.todoRadioBorder }}>
-                    <input className='todo-input' type="text" value={editedText} onChange={e => setEditedText(e.target.value)} />
+                <form className='todo__editor' onSubmit={editTextHandler} style={{ borderBottom: themes.todoRadioBorder }}>
+                    <input className='todo__editor-input' type="text" value={editedText} onChange={e => setEditedText(e.target.value)} />
                     <img onClick={deleteHandler} className='todo__icon--delete' src={iconCross} alt='todo-delete' />
                 </form>
                 :
-                <div className={todos.completed ? 'todo-item__inner completed' : 'todo-item__inner'} onDoubleClick={() => setDoubleClick(!doubleClick)} style={{ borderBottom: themes.todoRadioBorder }}>
-                    <div className={todo.completed ? 'todo__radio completed' : 'todo__radio'} onClick={activeHandler}><img className='todo__radio--check' src={iconCheck} alt="todo-check" /></div>
-                    <p className={todo.completed ? 'todo__text completed' : 'todo__text'} onClick={activeHandler} style={{ color: themes.todoTextColor }}>{todo.text}</p>
-                    <img onClick={deleteHandler} className='todo__icon--delete' src={iconCross} alt='todo-delete' />
+                <div className={todos.completed ? 'todo__item todo__item--completed' : 'todo__item'} onDoubleClick={() => setDoubleClick(!doubleClick)} style={{ borderBottom: themes.todoRadioBorder }}>
+                    <div className={isDarkMode ? 'todo__checkbox todo__checkbox--dark' : 'todo__checkbox todo__checkbox--light'} onClick={activeHandler} style={{ border: themes.todoRadioBorder }}>
+                        {todo.completed ? <img className='todo__check' src={iconCheck} ></img> : ''}
+                    </div>
+                    <p className={todo.completed ? 'todo__text todo__text--completed' : 'todo__text'} onClick={activeHandler} style={{ color: themes.todoTextColor }}>{todo.text}</p>
+                    <img onClick={deleteHandler} className='todo__delete' src={iconCross} alt='delete todo' />
                 </div>
             }
         </div >

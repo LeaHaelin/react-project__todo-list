@@ -12,18 +12,18 @@ function App() {
   const [todos, setTodos] = useState([]); // to store a newly updated todo in the list.
   const [filteredTodos, setFilteredTodos] = useState([]); //to show the list on UI depends on the status of a todo.
   const [todoStatus, setTodoStatus] = useState("all"); // to update the status of a todo when a status btn clicks.
+  const { isDarkMode, setIsDarkMode, themes } = useContext(ThemeContext); //Theme 
   //statusHandler will update status in mobile => <Status>, desktop => <List>.
   const statusHandler = (clickStatus) => {
     setTodoStatus(clickStatus);
   }
-  const { isDarkMode, setIsDarkMode, themes } = useContext(ThemeContext);
 
   return (
     <div className={isDarkMode ? "App App--dark" : "App App--light"} style={themes}>
       <div className="content">
         <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <Input inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} isDarkMode={isDarkMode} themes={themes} />
-        <List todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} statusHandler={statusHandler} themes={themes} />
+        <List todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} statusHandler={statusHandler} themes={themes} isDarkMode={isDarkMode} />
         <Status todos={todos} setFilteredTodos={setFilteredTodos} todoStatus={todoStatus} setTodoStatus={setTodoStatus} statusHandler={statusHandler} />
       </div>
     </div >

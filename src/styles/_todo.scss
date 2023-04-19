@@ -1,5 +1,6 @@
-.todo-form,
-.todo-item__inner {
+.todo__editor,
+.todo__item {
+    border: 1px solid rgb(223, 70, 44);
     height: 52px;
     display: flex;
     justify-content: left;
@@ -7,29 +8,38 @@
     padding: 16px 20px;
 }
 
-.todo__radio {
+.todo__checkbox {
     width: 20px;
     height: 20px;
-    border: 1px solid #E3E4F1;
-    border-radius: 50px;
-    margin-right: 12px;
     display: flex;
-    padding: 4px;
-}
-
-.todo__radio:hover {
-    cursor: pointer;
     border: 1px solid transparent;
-    background: linear-gradient(white, white) padding-box,
-        linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) border-box;
+    border-radius: 50%;
 }
 
-.todo__radio--check {
-    margin: 0 auto;
+.todo__checkbox--dark {
+    background: linear-gradient(#25273D, #25273D) padding-box, linear-gradient(90deg, #393A4B, #393A4B) border-box;
+
+    &:hover {
+        cursor: pointer;
+        border: 1px solid transparent;
+        background: linear-gradient(#25273D) padding-box, linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) border-box;
+    }
 }
 
-.todo__radio.completed {
-    background: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
+.todo__checkbox--light {
+    background: linear-gradient(#FFFFFF, #FFFFFF) padding-box, linear-gradient(90deg, #E3E4F1, #E3E4F1) border-box;
+
+    &:hover {
+        cursor: pointer;
+        border: 1px solid;
+        background: linear-gradient(white, white) padding-box, linear-gradient(135deg, #55DDFF 0%, #C058F3 100%) border-box;
+    }
+}
+
+.todo__check {
+    border: 1px solid white;
+    width: 20px;
+    height: 20px;
 }
 
 .todo__text {
@@ -44,14 +54,14 @@
     color: #D1D2DA;
 }
 
-.todo__icon--delete {
+.todo__delete {
     margin-left: 20px;
     width: 11.79px;
     height: 11.79px;
 }
 
 .todo__text:hover,
-.todo__icon--delete:hover {
+.todo__delete:hover {
     cursor: pointer;
 }
 

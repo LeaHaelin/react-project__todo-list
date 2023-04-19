@@ -1,7 +1,7 @@
 import React from 'react';
 import { Todo } from './Todo';
 
-export const List = ({ todos, setTodos, filteredTodos, statusHandler, themes }) => {
+export const List = ({ todos, setTodos, filteredTodos, statusHandler, themes, isDarkMode }) => {
     const clearCompletedHandler = () => {
         setTodos(todos.filter(t => t.completed === false))
     }
@@ -11,7 +11,7 @@ export const List = ({ todos, setTodos, filteredTodos, statusHandler, themes }) 
             <ul className='list__todos' >
                 {filteredTodos.map((todo) => {
                     // make a child component which we'll use repeatedly.
-                    return <Todo todo={todo} key={todo.id} todos={todos} setTodos={setTodos} themes={themes} />
+                    return <Todo todo={todo} key={todo.id} todos={todos} setTodos={setTodos} themes={themes} isDarkMode={isDarkMode} />
                 })}
             </ul>
             <div className='list__control'>
