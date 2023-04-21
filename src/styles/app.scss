@@ -1,4 +1,6 @@
-$check: url('../images/icon-check.svg');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+$font: 'Josefin Sans', sans-serif;
+$check: url('../assets/images/icon-check.svg');
 
 * {
     padding: 0;
@@ -8,36 +10,65 @@ $check: url('../images/icon-check.svg');
 
 body {
     height: 100%;
-    border: 1px solid rgb(255, 106, 0);
 }
 
 .App {
+    font-family: $font;
     margin: 0 auto;
-    border: 1px solid rgb(238, 255, 0);
     width: 100%;
+    min-width: 370px;
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center 0;
-    font-family: 'Josefin Sans', sans-serif;
 
     &--light {
-        background-image: url('../images/bg-mobile-light.jpg');
+        background-image: url('../assets/images/bg-mobile-light.jpg');
     }
 
     &--dark {
-        background-image: url('../images/bg-mobile-dark.jpg');
+        background-image: url('../assets/images/bg-mobile-dark.jpg');
     }
 }
 
 .content {
-    margin: 48px auto 0;
-    border: 1px solid rgb(0, 132, 255);
-    max-width: 327px;
+    margin: 0 auto;
+    min-width: 327px;
+    max-width: 400px;
+    padding: 38px 24px;
 }
 
-@media(min-width:700px) {}
+.footer {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 12px;
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+    &__name {
+        text-decoration: none;
+        color: #50acc39a;
+    }
+}
+
+
+@media(min-width:560px) {
+    .App {
+        min-width: 500px;
+
+        &--light {
+            background-image: url('../assets/images/bg-desktop-light.jpg');
+        }
+
+        &--dark {
+            background-image: url('../assets/images/bg-desktop-dark.jpg');
+        }
+    }
+
+    .content {
+        min-width: 400px;
+        max-width: 560px;
+        padding: 60px 0;
+    }
+}
+
 @import url(./_header.scss);
 @import url(./_input.scss);
 @import url(./_list.scss);

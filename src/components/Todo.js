@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import iconCheck from '../images/icon-check.svg';
-import iconCross from '../images/icon-cross.svg';
+import iconCheck from '../assets/images/icon-check.svg';
+import iconCross from '../assets/images/icon-cross.svg';
 
 
 export const Todo = ({ todo, todos, setTodos, themes, isDarkMode }) => {
@@ -43,15 +43,15 @@ export const Todo = ({ todo, todos, setTodos, themes, isDarkMode }) => {
         <div className={todos.completed ? 'todo todo--completed' : 'todo'} >
             {doubleClick ?
                 <form className='todo__editor' onSubmit={editTextHandler} style={{ borderBottom: themes.todoRadioBorder }}>
-                    <input className='todo__editor-input' type="text" value={editedText} onChange={e => setEditedText(e.target.value)} />
-                    <img onClick={deleteHandler} className='todo__icon--delete' src={iconCross} alt='todo-delete' />
+                    <input className='todo__editor-input' type="text" placeholder='Press Enter to finish editing' value={editedText} onChange={e => setEditedText(e.target.value)} style={{ color: themes.todoTextColor }} />
+                    <img onClick={deleteHandler} className='todo__delete' src={iconCross} alt='todo-delete' />
                 </form>
                 :
                 <div className={todos.completed ? 'todo__item todo__item--completed' : 'todo__item'} onDoubleClick={() => setDoubleClick(!doubleClick)} style={{ borderBottom: themes.todoRadioBorder }}>
-                    <div className={isDarkMode ? 'todo__checkbox todo__checkbox--dark' : 'todo__checkbox todo__checkbox--light'} onClick={activeHandler} style={{ border: themes.todoRadioBorder }}>
-                        {todo.completed ? <img className='todo__check' src={iconCheck} ></img> : ''}
+                    <div className={todos.completed ? 'todo__checkbox todo__checkbox--completed' : (isDarkMode ? 'todo__checkbox dark' : 'todo__checkbox light')} onClick={activeHandler} >
+                        {todo.completed ? <img className='todo__check' src={iconCheck} alt='checked' ></img> : ''}
                     </div>
-                    <p className={todo.completed ? 'todo__text todo__text--completed' : 'todo__text'} onClick={activeHandler} style={{ color: themes.todoTextColor }}>{todo.text}</p>
+                    <p className={todo.completed ? 'todo__text completed' : 'todo__text'} onClick={activeHandler} style={{ color: `${todo.completed ? themes.todoCompletedColor : themes.todoTextColor}` }} >{todo.text}</p>
                     <img onClick={deleteHandler} className='todo__delete' src={iconCross} alt='delete todo' />
                 </div>
             }

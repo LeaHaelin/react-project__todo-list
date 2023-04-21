@@ -17,9 +17,9 @@ export const Input = ({ inputText, setInputText, todos, setTodos, isDarkMode, th
     }
 
     return (
-        <form className={isDarkMode ? 'input input--dark' : 'input input--light'} style={{ backgroundColor: themes.inputListBgColor }} onSubmit={submitHandler}>
+        <form className={isDarkMode ? 'input input--dark' : 'input input--light'} style={{ backgroundColor: themes.contentBgColor }} onSubmit={submitHandler}>
             <div className="input__radio" style={{ border: themes.todoRadioBorder }}></div>
-            <input className='input__text-area' type="text" placeholder='Create a new todo…' value={inputText} onChange={inputTextHandler} style={{ color: themes.inputTextColor }} />
+            <input className='input__text-area' type="text" placeholder='Create a new todo…' value={inputText} onChange={inputTextHandler} style={{ color: themes.todoTextColor }} />
         </form>
     )
 }

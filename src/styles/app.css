@@ -12,27 +12,54 @@
 
 body {
   height: 100%;
-  border: 1px solid rgb(255, 106, 0);
 }
 
 .App {
+  font-family: "Josefin Sans", sans-serif;
   margin: 0 auto;
-  border: 1px solid rgb(238, 255, 0);
   width: 100%;
+  min-width: 370px;
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center 0;
-  font-family: "Josefin Sans", sans-serif;
 }
 .App--light {
-  background-image: url("../images/bg-mobile-light.jpg");
+  background-image: url("../assets/images/bg-mobile-light.jpg");
 }
 .App--dark {
-  background-image: url("../images/bg-mobile-dark.jpg");
+  background-image: url("../assets/images/bg-mobile-dark.jpg");
 }
 
 .content {
-  margin: 48px auto 0;
-  border: 1px solid rgb(0, 132, 255);
-  max-width: 327px;
+  margin: 0 auto;
+  min-width: 327px;
+  max-width: 400px;
+  padding: 38px 24px;
+}
+
+.footer {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 12px;
+}
+.footer__name {
+  text-decoration: none;
+  color: rgba(80, 172, 195, 0.6039215686);
+}
+
+@media (min-width: 560px) {
+  .App {
+    min-width: 500px;
+  }
+  .App--light {
+    background-image: url("../assets/images/bg-desktop-light.jpg");
+  }
+  .App--dark {
+    background-image: url("../assets/images/bg-desktop-dark.jpg");
+  }
+  .content {
+    min-width: 400px;
+    max-width: 560px;
+    padding: 60px 0;
+  }
 }/*# sourceMappingURL=app.css.map */

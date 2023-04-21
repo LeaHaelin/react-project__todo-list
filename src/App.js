@@ -24,7 +24,10 @@ function App() {
         <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <Input inputText={inputText} setInputText={setInputText} todos={todos} setTodos={setTodos} isDarkMode={isDarkMode} themes={themes} />
         <List todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} statusHandler={statusHandler} themes={themes} isDarkMode={isDarkMode} />
-        <Status todos={todos} setFilteredTodos={setFilteredTodos} todoStatus={todoStatus} setTodoStatus={setTodoStatus} statusHandler={statusHandler} />
+        <Status todos={todos} setFilteredTodos={setFilteredTodos} todoStatus={todoStatus} setTodoStatus={setTodoStatus} statusHandler={statusHandler} themes={themes} />
+        <footer className="footer" style={{ color: themes.listTextColor }}>
+          <p className="footer__credit" >TODO App built by <a className="footer__name" href="https://github.com/LeaHaelin">Lea H. Kim</a>.</p>
+        </footer>
       </div>
     </div >
   );
